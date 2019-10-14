@@ -1,16 +1,20 @@
-<mat-toolbar color="primary">
-    <mat-icon aria-hidden="false" aria-label="Home" (click)="toMain()">home</mat-icon>
-    <p>&ensp;MyForm</p>
-</mat-toolbar>
-<!-- <app-formview></app-formview> -->
-<div fxLayout="row" fxLayoutAlign="space-evenly">
-    <div>
-    <!-- <div fxFlex="1 1 40%"> -->
-        <router-outlet></router-outlet>
+<div id="topLevel" fxLayout="column">
+
+    <mat-toolbar color="primary">
+        <mat-icon aria-hidden="false" aria-label="Home" (click)="toMain()">home</mat-icon>
+        <p>&ensp;MyForm</p>
+    </mat-toolbar>
+    <!-- <app-formview></app-formview> -->
+    <div id="midLevel" fxLayout="row" fxLayoutAlign="space-evenly">
+        <div>
+            <!-- <div fxFlex="1 1 40%"> -->
+            <router-outlet></router-outlet>
+        </div>
+        <div>
+            <!-- <div fxFlex="1 1 auto"> -->
+            <img src="../images/icons/icon-192x192.png" alt="Nice image">
+        </div>
     </div>
-    <div>
-    <!-- <div fxFlex="1 1 auto"> -->
-        <img src="../images/icons/icon-192x192.png" alt="Nice image">
-    </div>
+    <!-- height="42" width="42"> -->
+
 </div>
-<!-- height="42" width="42"> -->
