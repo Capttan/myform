@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class FormviewComponent implements OnInit {
 
-  constructor(private cusSvc: CustomserviceService, private router: Router) { }
+  constructor(public cusSvc: CustomserviceService, private router: Router) { }
 
   ngOnInit() {
     this.logCountryPromise();

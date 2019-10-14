@@ -11,7 +11,7 @@ import { CustomserviceService } from '../services/customservice.service'
 export class ListviewComponent implements OnInit {
 
 
-  constructor(private cusSvc: CustomserviceService, private router: Router) {
+  constructor(public cusSvc: CustomserviceService, private router: Router) {
   }
 
   ngOnInit() {

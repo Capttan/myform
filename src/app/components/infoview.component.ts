@@ -15,7 +15,7 @@ export class InfoviewComponent implements OnInit {
   // model: Weather = { cityName:"Singapore", temp:0 };
   // WEATHER_API_KEY = "476e23fe1116f4e69d2a3e68672604e1";
 
-  constructor(private cusSvc: CustomserviceService, private router: Router,
+  constructor(public cusSvc: CustomserviceService, private router: Router,
   private activatedRoute: ActivatedRoute) { }
 
   localPass:string;
