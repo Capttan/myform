@@ -9,12 +9,12 @@ branches:
 before_script:
   - npm install -g @angular/cli
 script:
-  - ng build --prod --base-href https://Capttan.github.io/myformassessment/
+  - ng build --prod --base-href https://Capttan.github.io/myform/
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: dist/myformassessment
+  local_dir: dist/myform
   on:
     branch: master
 
