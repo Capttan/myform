@@ -1,0 +1,27 @@
+<p>Thank you for your submission!</p><br>
+<p>Confirmation</p>
+
+<mat-card>Name: {{this.cusSvc.formObj.name}}</mat-card>
+<!-- <mat-card>Password: {{this.cusSvc.formObj.password}}</mat-card> -->
+<mat-card>Password: {{localPass}}</mat-card>
+<mat-card>Email: {{this.cusSvc.formObj.email}}</mat-card>
+<mat-card>Gender: {{this.cusSvc.formObj.gender}}</mat-card>
+<mat-card>Date of birth: {{this.cusSvc.formObj.dob}}</mat-card>
+<mat-card>Address: {{this.cusSvc.formObj.address}}</mat-card>
+<mat-card>Country: {{this.cusSvc.formObj.country}}</mat-card>
+<mat-card>Contact number: {{this.cusSvc.formObj.contact}}</mat-card>
+
+
+
+
+<!-- <div>
+    <label for="displayText">City Name:</label>
+    <input type="text" name="displayTest" [value]="model.cityName" disabled>
+</div> -->
+
+<button mat-button name="back" (click)="toHome()">Back</button>
+
+
+<!-- <mat-form-field appearance="outline">
+    <input #name="ngModel" matInput name="name" type="text" name.value="hello" disabled ngModel>
+</mat-form-field> -->

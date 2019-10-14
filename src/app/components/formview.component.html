@@ -1,0 +1,108 @@
+<form #form="ngForm" (ngSubmit)="processForm(form)">
+
+
+    <!-- input type="text" -->
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input #name="ngModel" matInput name="name" type="text" required ngModel
+                (change)="logInputEvent($event,name)">
+            <mat-error *ngIf="name.invalid">Name invalid!</mat-error>
+            <!--contact.name refers to #name-->
+        </mat-form-field>
+    </div>
+
+
+    <!-- password type="password" -->
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input #pass="ngModel" matInput name="pass" type="password" required ngModel
+                pattern="(?=.*[@#$])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" (change)="logInputEvent($event,pass)">
+            <mat-error *ngIf="pass.invalid">Password invalid!</mat-error>
+            <!--contact.name refers to #name-->
+        </mat-form-field>
+    </div>
+
+    <!-- email type="email" -->
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input #email="ngModel" matInput name="email" type="email" required email ngModel
+                (change)="logInputEvent($event,email)">
+            <mat-error *ngIf="email.invalid">Email invalid!</mat-error>
+            <!--contact.name refers to #name-->
+        </mat-form-field>
+    </div>
+
+
+    <!-- gender radio group -->
+    <div>
+        <mat-label>Gender:</mat-label>
+        <mat-radio-group #gender="ngModel" name="gender" ngModel required (change)="logInputEvent($event,gender)">
+            <mat-radio-button value="Male" selected> Male </mat-radio-button>
+            <mat-radio-button value="Female"> Female </mat-radio-button>
+        </mat-radio-group>
+        <mat-error *ngIf="gender.invalid">Gender invalid!</mat-error>
+    </div>
+    <br>
+
+    <!-- input type="date" -->
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Date of birth:</mat-label>
+            <input #dob="ngModel" matInput name="dob" type="date" required ngModel appAgeValidator
+                (change)="logInputEvent($event,dob)">
+            <mat-error *ngIf="dob.invalid">Must be at least 18 years old!</mat-error>
+            <!--dob.invalid refers to #contact-->
+        </mat-form-field>
+    </div>
+
+    <!-- address type="text" -->
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Address</mat-label>
+            <input #address="ngModel" matInput name="address" type="text" required ngModel
+                (change)="logInputEvent($event,address)">
+            <mat-error *ngIf="address.invalid">Address invalid!</mat-error>
+            <!--contact.invalid refers to #contact-->
+        </mat-form-field>
+    </div>
+
+
+    <!-- country select group --> 
+    <!--TODO-->
+    <div>
+        <mat-form-field>
+            <mat-label>Country:</mat-label>
+            <mat-select #country="ngModel" name="country" ngModel required
+            (change)="logInputEvent($event,country)">
+                <mat-option *ngFor="let element of this.cusSvc.ctyForm;let i = index" 
+                [value]="element.name"> {{element.name}} </mat-option>
+            </mat-select>
+            <mat-error *ngIf="country.invalid">Please select a country.</mat-error>
+        </mat-form-field>
+    </div>
+    <!--TODO-->
+
+
+    <!-- contact type="text" -->
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Contact No.</mat-label>
+            <input #contact="ngModel" matInput name="contact" type="text" required ngModel 
+            pattern="[0-9+\- ()]{0,}" (change)="logInputEvent($event,contact)">
+            <mat-error *ngIf="contact.invalid">Contact number invalid!</mat-error>
+            <!--contact.invalid refers to #contact-->
+        </mat-form-field>
+    </div>
+
+
+
+    <div>
+        <button mat-button name="clear" type="reset">Clear</button>
+        <button mat-button name="reply" type="submit" [disabled]="form.invalid">Submit</button>
+        <!-- <button mat-button name="reply" type="submit">Submit</button> -->
+    </div>
+
+</form>
