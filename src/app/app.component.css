@@ -1,5 +1,10 @@
 #midLevel {
     margin-right: 5%;
     margin-left: 5%;
-    /* border: blue solid; */
+    border: blue solid;
+  }
+
+  #topLevel{
+      height: auto;
+      width: auto;
   }
