@@ -1,8 +1,10 @@
+<!-- <div class="example-container"> -->
+
 <form #form="ngForm" (ngSubmit)="processForm(form)">
 
 
     <!-- input type="text" -->
-    <div>
+    <div class="example-container">
         <mat-form-field appearance="outline">
             <mat-label>Name</mat-label>
             <input #name="ngModel" matInput name="name" type="text" required ngModel
@@ -14,7 +16,7 @@
 
 
     <!-- password type="password" -->
-    <div>
+    <div class="example-container">
         <mat-form-field appearance="outline">
             <mat-label>Password</mat-label>
             <input #pass="ngModel" matInput name="pass" type="password" required ngModel
@@ -25,7 +27,7 @@
     </div>
 
     <!-- email type="email" -->
-    <div>
+    <div class="example-container">
         <mat-form-field appearance="outline">
             <mat-label>Email</mat-label>
             <input #email="ngModel" matInput name="email" type="email" required email ngModel
@@ -37,7 +39,7 @@
 
 
     <!-- gender radio group -->
-    <div>
+    <div class="example-container">
         <mat-label>Gender:</mat-label>
         <mat-radio-group #gender="ngModel" name="gender" ngModel required (change)="logInputEvent($event,gender)">
             <mat-radio-button value="Male" selected> Male </mat-radio-button>
@@ -48,7 +50,7 @@
     <br>
 
     <!-- input type="date" -->
-    <div>
+    <div class="example-container">
         <mat-form-field appearance="outline">
             <mat-label>Date of birth:</mat-label>
             <input #dob="ngModel" matInput name="dob" type="date" required ngModel appAgeValidator
@@ -59,7 +61,7 @@
     </div>
 
     <!-- address type="text" -->
-    <div>
+    <div class="example-container">
         <mat-form-field appearance="outline">
             <mat-label>Address</mat-label>
             <input #address="ngModel" matInput name="address" type="text" required ngModel
@@ -72,7 +74,7 @@
 
     <!-- country select group --> 
     <!--TODO-->
-    <div>
+    <div class="example-container">
         <mat-form-field>
             <mat-label>Country:</mat-label>
             <mat-select #country="ngModel" name="country" ngModel required
@@ -87,7 +89,7 @@
 
 
     <!-- contact type="text" -->
-    <div>
+    <div class="example-container">
         <mat-form-field appearance="outline">
             <mat-label>Contact No.</mat-label>
             <input #contact="ngModel" matInput name="contact" type="text" required ngModel 
@@ -106,3 +108,4 @@
     </div>
 
 </form>
+<!-- </div> -->
