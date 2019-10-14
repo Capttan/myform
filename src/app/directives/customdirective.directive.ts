@@ -82,12 +82,23 @@ export class AgeValidatorDirective implements Validator{
       let currentDate = Date.parse(dateString);
       let selectDate = Date.parse(c.value); //c.value refers to $event.target.value
 
+      // number of ms since 1972/03/01 00:00
       let numLeapDaysCurrent = Math.floor((currentDate-first_leapday_ref)/(1000 * 60 * 60 * 24 * 1461));
       let numLeapDaysSelect = Math.floor((selectDate-first_leapday_ref)/(1000 * 60 * 60 * 24 * 1461));
 
       let LeapDaysDelMs = (numLeapDaysCurrent - numLeapDaysSelect)*(1000 * 60 * 60 * 24);
 
-      if(Math.floor((currentDate - selectDate - LeapDaysDelMs) / (1000 * 60 * 60 * 24 * 365))>=18){
+      //Take care of loss of precision
+
+      let temp_float = (currentDate - selectDate - LeapDaysDelMs) / (1000 * 60 * 60 * 24 * 365);
+      let temp = 0;
+      if ((Math.ceil(temp_float)-temp_float) < 0.001){
+        temp = Math.ceil(temp_float);
+      }else{
+        temp = Math.floor(temp_float);
+      }
+
+      if(temp>=18){
         isValid = true;
       }
 

@@ -40,6 +40,9 @@ export class FormviewComponent implements OnInit {
     // console.info(parseInt($event.target.value)); //convert number string to int
     // console.info(parseFloat($event.target.value)); //convert number string to float
     // console.info(Date.parse($event.target.value)); //convert date string to an epoch counter in ms
+    
+
+  
   }
 
   // processForm(form: NgForm){
@@ -67,6 +70,8 @@ export class FormviewComponent implements OnInit {
     console.info('values: ', values);
 
     //form debugging
+    let dateString = new Date().toLocaleDateString();
+    console.info(dateString);
 
     //processForm algo
 
